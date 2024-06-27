@@ -7,7 +7,7 @@ class Card(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
     description = db.Column(db.String)
-    date = db.Columnn(db.Date) # date of creation
+    date = db.Column(db.Date) # date of creation
     status = db.Column(db.String)
     priority = db.Column(db.String)
 

@@ -43,7 +43,6 @@ def seed_tables():
 
     db.session.add_all(users)
 
-
     cards = [
     Card (
         title="Card 1",
@@ -75,6 +74,30 @@ def seed_tables():
     ]
 
     db.session.add_all(cards)
+
+    comments = [
+        Comment(
+            message="Comment 1",
+            date=date.today(),
+            user=users[1],
+            card=cards[0]
+        ),
+        Comment(
+            message="Comment 2",
+            date=date.today(),
+            user=users[0],
+            card=cards[0]
+        ),
+        Comment(
+            message="Comment 3",
+            date=date.today(),
+            user=users[0],
+            card=cards[2]
+        )
+
+
+    ]
+    db.session.add_all(comments)
 
     db.session.commit()
 
